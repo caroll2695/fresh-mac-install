@@ -1,0 +1,20 @@
+#install yadr
+sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
+
+#install brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+#install atom
+brew cask install atom
+
+#install spectacle
+brew cask install spectacle
+
+#install chrome
+brew cask install google-chrome
+
+#install python
+brew install python
+brew install python@2
+pip install --upgrade setuptools
+pip install --upgrade pip
