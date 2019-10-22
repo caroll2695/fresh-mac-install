@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/zsh
 
 #install brew before yadr to avoid slowdown
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -26,3 +25,6 @@ pip install --upgrade pip
 #install docker
 brew cask install docker
 #run docker app
+
+# zsh auto
+brew info zsh-autosuggestions
