@@ -28,3 +28,8 @@ brew cask install docker
 
 # zsh auto
 brew info zsh-autosuggestions
+brew install zsh-autosuggestions
+
+# remove python2 
+# make a reference to python3 like this.
+ln -s /usr/local/bin/python3 /usr/local/bin/python   
