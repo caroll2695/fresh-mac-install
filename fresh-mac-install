@@ -1,19 +1,33 @@
 #!/bin/zsh
 
 #install brew before yadr to avoid slowdown
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-#install yadr
-sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
 
-#install atom
-brew cask install atom
+brew cask install iterm2
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# install fonts
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+
+# setting up powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+# Set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc
+
+# install zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# add zsh-autosuggestions to plugins list
+
+# setting up git auth. After installing just clone a repo and it will auth through browser
+brew install --cask git-credential-manager
 
 #install spectacle
 brew cask install spectacle
 
-#install chrome
-brew cask install google-chrome
 
 #install python
 brew install python
@@ -25,10 +39,6 @@ pip install --upgrade pip
 #install docker
 brew cask install docker
 #run docker app
-
-# zsh auto
-brew info zsh-autosuggestions
-brew install zsh-autosuggestions
 
 # remove python2 
 # make a reference to python3 like this.
