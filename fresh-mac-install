@@ -25,20 +25,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # setting up git auth. After installing just clone a repo and it will auth through browser
 brew install --cask git-credential-manager
 
-#install spectacle
-brew cask install spectacle
-
-
-#install python
-brew install python
-brew install python@2
-pip install --upgrade setuptools
-pip install --upgrade pip
+brew install derailed/k9s/k9s
 
 
 #install docker
 brew cask install docker
-#run docker app
 
 # remove python2 
 # make a reference to python3 like this.
